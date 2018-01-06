@@ -1,0 +1,14 @@
+{
+    "name": "node-red-contrib-open-vpn",
+    "version": "1.0.0",
+    "description": "Openvpn Extension for Node-red",
+    "author": "Riccardo Bertini",
+    "keywords": [
+        "openvpn"
+    ],
+    "node-red": {
+        "nodes": {
+            "open-vpn": "open-vpn.js"
+        }
+    }
+}

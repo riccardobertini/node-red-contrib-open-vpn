@@ -1,0 +1,40 @@
+<script type="text/javascript">
+    RED.nodes.registerType('open-vpn',{
+        category: 'input',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            certificate : {value:"",required:true}
+        },
+        inputs:1,
+        outputs:2,
+        icon: "white-globe.png",
+        label: function() {
+            return this.name||"open-vpn";
+        },
+        inputLabels: "msg.payload=true (connect), msg.payload=false (disconnect)",
+        outputLabels: ["Connected","Disconnected"],
+    });
+</script>
+
+<script type="text/x-red" data-template-name="open-vpn">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-certificate"><i class="icon-tag"></i>Certificate</label>
+        <input type="text" id="node-input-certificate" placeholder="certificate.ovpn or /path/certificate/certificate.ovpn">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="open-vpn">
+    <p>Set certificate name in to "Certificate" field and set msg.payload=true for Connect to VPN or set msg.payload=false for Disconnect from OpenVPN</p>
+    <br/>
+    <p>If vpn connected, msg.payload contain IP address of tun connection</p>
+    <br/>
+    <p>IMPORTANT ! before starting you need to run this command to enable the necessary permissions on the openvpn executable file
+        <br>
+        sudo chmod +s /path/of/bin/openvpn
+    </p>
+</script>
