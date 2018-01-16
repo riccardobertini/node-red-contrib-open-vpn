@@ -1,0 +1,140 @@
+[
+    {
+        "id": "fbc2ac2c.51106",
+        "type": "tab",
+        "label": "Flow 1"
+    },
+    {
+        "id": "9e6b64a.c950498",
+        "type": "inject",
+        "z": "fbc2ac2c.51106",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 140,
+        "y": 200,
+        "wires": [
+            [
+                "3fefed1b.63dc82"
+            ]
+        ]
+    },
+    {
+        "id": "2a40e2d3.3c02be",
+        "type": "debug",
+        "z": "fbc2ac2c.51106",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 630,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "935a0df4.66b93",
+        "type": "open-vpn",
+        "z": "fbc2ac2c.51106",
+        "name": "",
+        "certificate": "test.ovpn",
+        "x": 420,
+        "y": 320,
+        "wires": [
+            [
+                "2a40e2d3.3c02be"
+            ],
+            [
+                "3d71ea6d.98fbd6"
+            ]
+        ]
+    },
+    {
+        "id": "3fefed1b.63dc82",
+        "type": "change",
+        "z": "fbc2ac2c.51106",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 240,
+        "y": 314,
+        "wires": [
+            [
+                "935a0df4.66b93"
+            ]
+        ]
+    },
+    {
+        "id": "6adb559c.61d98c",
+        "type": "inject",
+        "z": "fbc2ac2c.51106",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 100,
+        "y": 380,
+        "wires": [
+            [
+                "cec7f5a3.f46c38"
+            ]
+        ]
+    },
+    {
+        "id": "cec7f5a3.f46c38",
+        "type": "change",
+        "z": "fbc2ac2c.51106",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 200,
+        "y": 494,
+        "wires": [
+            [
+                "935a0df4.66b93"
+            ]
+        ]
+    },
+    {
+        "id": "3d71ea6d.98fbd6",
+        "type": "debug",
+        "z": "fbc2ac2c.51106",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 630,
+        "y": 340,
+        "wires": []
+    }
+]
